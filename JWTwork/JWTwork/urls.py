@@ -23,8 +23,8 @@ router = DefaultRouter()
 router.register('studentApi',views.StudentApi,basename='student')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('',include(router.urls)),
+    path('admin/', admin.site.urls),
     path('gettoken/',TokenObtainPairView.as_view()),
     path('refresh/',TokenRefreshView.as_view()),
     path('verify/',TokenVerifyView.as_view()),
